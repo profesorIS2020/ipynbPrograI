@@ -1,0 +1,113 @@
+
+
+/*La instrucción de control switch*/
+
+for(i=0; i<10; i++) 
+      switch(i) { 
+        case 0:  
+          std::cout <<"i is zero"<< endl; 
+          break; 
+        case 1:  
+          std::cout <<"i is one"<< endl;
+          break; 
+        case 2:  
+         std::cout <<"i is two"<< endl;
+          break; 
+        case 3:  
+         std::cout <<"i is three"<< endl; 
+          break; 
+        case 4:  
+         std::cout <<"i is four"<< endl;
+          break; 
+        default:  
+          std::cout <<"i is five or more"<< endl;
+      } 
+
+
+/*Switch Demo*/
+
+Código Fuente:
+// Demonstrate the switch. 
+#include <iostream>
+using namespace std;   
+  int main(){
+int i; 
+for(i=0; i<10; i++) 
+      switch(i) { 
+        case 0:  
+          std::cout <<"i is zero"<< endl; 
+          break; 
+        case 1:  
+          std::cout <<"i is one"<< endl;
+          break; 
+        case 2:  
+         std::cout <<"i is two"<< endl;
+          break; 
+        case 3:  
+         std::cout <<"i is three"<< endl; 
+          break; 
+        case 4:  
+         std::cout <<"i is four"<< endl;
+          break; 
+        default:  
+          std::cout <<"i is five or more"<< endl;
+      } 
+return 0;
+  }   
+
+  /*SwitchNoBreak*/
+Código Fuente:
+// Guess the letter game.  
+#include <iostream>
+using namespace std;   
+  int main(){
+
+for(i=0; i<=5; i++) { 
+      switch(i) { 
+        case 0:  
+          std::cout << "i is less than one" << endl; 
+        case 1:  
+           std::cout << "i is less than two"<< endl;  
+        case 2:  
+           std::cout << "i is less than three"<< endl; 
+        case 3:  
+           std::cout << "i is less than four"<< endl; 
+        case 4:  
+           std::cout << "i is less than five"<< endl;  
+      } 
+       std::cout << “ ” << endl;  
+    } 
+	return 0;
+  }   
+  
+
+/*Help System*/
+#include <iostream>
+using namespace std;   
+  int main(){
+	char choice;
+	std::cout << "Help on:" << endl;
+	std::cout << "  1. if" << endl;
+	std::cout << "  2. switch" << endl;
+	std::cout << "Choose one: "<< endl;  
+	std::cin >> choice;
+switch(choice) {
+  	case '1':
+    	std::cout << "The if:\n"<< endl;  
+    	std::cout << "if(condition) statement;"<< endl;  
+    	std::cout <<"else statement;"<< endl;
+    	break;  
+  	case '2':
+    	std::cout <<" The switch:\n"<< endl;
+    	std::cout << "switch(expression) {"<< endl;
+    	std::cout << "  case constant:"<< endl;
+    	std::cout << " statement sequence"<< endl;  
+    	std::cout << "  break;"<< endl;
+    	std::cout << " /"<<"/ ..."<< endl;  
+    	std::cout << "}"<< endl;
+    	break;
+  	default:
+    	std::cout << "Selection not found."<< endl;  
+	}  
+return 0;
+}
