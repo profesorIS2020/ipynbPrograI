@@ -1,113 +1,200 @@
-
-
-/*La instrucción de control switch*/
-
-for(i=0; i<10; i++) 
-      switch(i) { 
-        case 0:  
-          std::cout <<"i is zero"<< endl; 
-          break; 
-        case 1:  
-          std::cout <<"i is one"<< endl;
-          break; 
-        case 2:  
-         std::cout <<"i is two"<< endl;
-          break; 
-        case 3:  
-         std::cout <<"i is three"<< endl; 
-          break; 
-        case 4:  
-         std::cout <<"i is four"<< endl;
-          break; 
-        default:  
-          std::cout <<"i is five or more"<< endl;
-      } 
-
-
-/*Switch Demo*/
-
-Código Fuente:
-// Demonstrate the switch. 
+Ejercicios Básicos C++
+Ejercicios de Introducción a la Programación en C++
+________________________________________
+Ejercicio 1: Dirección de Correo
+Escribe un programa que muestre tu nombre y dirección de correo. No es necesario leer esta información del usuario; estos valores pueden ser parte del código fuente del programa.
 #include <iostream>
-using namespace std;   
-  int main(){
-int i; 
-for(i=0; i<10; i++) 
-      switch(i) { 
-        case 0:  
-          std::cout <<"i is zero"<< endl; 
-          break; 
-        case 1:  
-          std::cout <<"i is one"<< endl;
-          break; 
-        case 2:  
-         std::cout <<"i is two"<< endl;
-          break; 
-        case 3:  
-         std::cout <<"i is three"<< endl; 
-          break; 
-        case 4:  
-         std::cout <<"i is four"<< endl;
-          break; 
-        default:  
-          std::cout <<"i is five or more"<< endl;
-      } 
-return 0;
-  }   
-
-  /*SwitchNoBreak*/
-Código Fuente:
-// Guess the letter game.  
-#include <iostream>
-using namespace std;   
-  int main(){
-
-for(i=0; i<=5; i++) { 
-      switch(i) { 
-        case 0:  
-          std::cout << "i is less than one" << endl; 
-        case 1:  
-           std::cout << "i is less than two"<< endl;  
-        case 2:  
-           std::cout << "i is less than three"<< endl; 
-        case 3:  
-           std::cout << "i is less than four"<< endl; 
-        case 4:  
-           std::cout << "i is less than five"<< endl;  
-      } 
-       std::cout << “ ” << endl;  
-    } 
-	return 0;
-  }   
-  
-
-/*Help System*/
-#include <iostream>
-using namespace std;   
-  int main(){
-	char choice;
-	std::cout << "Help on:" << endl;
-	std::cout << "  1. if" << endl;
-	std::cout << "  2. switch" << endl;
-	std::cout << "Choose one: "<< endl;  
-	std::cin >> choice;
-switch(choice) {
-  	case '1':
-    	std::cout << "The if:\n"<< endl;  
-    	std::cout << "if(condition) statement;"<< endl;  
-    	std::cout <<"else statement;"<< endl;
-    	break;  
-  	case '2':
-    	std::cout <<" The switch:\n"<< endl;
-    	std::cout << "switch(expression) {"<< endl;
-    	std::cout << "  case constant:"<< endl;
-    	std::cout << " statement sequence"<< endl;  
-    	std::cout << "  break;"<< endl;
-    	std::cout << " /"<<"/ ..."<< endl;  
-    	std::cout << "}"<< endl;
-    	break;
-  	default:
-    	std::cout << "Selection not found."<< endl;  
-	}  
-return 0;
+using namespace std;
+int main() {
+    // Muestra el nombre y el correo electrónico.
+    cout << "Nombre: Juan Pérez" << endl;
+    cout << "Correo: juan.perez@example.com" << endl;
+    return 0;
 }
+________________________________________
+Ejercicio 2: Hola
+
+Escribe un programa que le pida al usuario que ingrese su nombre. El programa debe responder con un mensaje que diga hola al usuario, usando su nombre. Utiliza 13 líneas de código
+#include <iostream>
+#include <string>
+using namespace std;
+/** Programa que pide el nombre al usuario y lo saluda*/
+int main() {
+    string nombre;
+    cout << "Ingrese su nombre: ";
+//   Obtener el nombre por línea de comandos 
+    getline(cin, nombre);
+//Mostrar el resultado
+    cout << "Hola, " << nombre << "!" << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 3: Área de una Habitación
+
+Escribe un programa que le pida al usuario que ingrese el ancho y el largo de una habitación. Una vez que se hayan leído los valores, tu programa debe calcular y mostrar el área de la habitación. El largo y el ancho se ingresarán como números de punto flotante. Incluye unidades en tu prompt y mensaje de salida; ya sea pies o metros, dependiendo de con qué unidad te sientas más cómodo trabajando. Utilice 14 líneas de código
+#include <iostream>
+using namespace std;
+/*Programa para calcular el área de una habitación*/
+int main() {
+    double largo, ancho;
+    cout << "Ingrese la longitud de la habitación en metros: ";
+    cin >> largo;
+    cout << "Ingrese el ancho de la habitación en metros: ";
+    cin >> ancho;
+    double area = largo * ancho;
+// Mostrar el resultado
+    cout << "El área de la habitación es " << area << " metros cuadrados." << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 4: Área de un Campo
+Crea un programa que lea el largo y el ancho del campo de un granjero del usuario en pies. Muestra el área del campo en acres. Resuélvelo en 14 líneas
+Pista: Hay 43,560 pies cuadrados en un acre.
+#include <iostream>
+using namespace std;
+/*Programa que calcula el área de un campo en acres*/
+int main() {
+    double largo, ancho;
+    cout << "Ingrese el largo del campo en pies: ";
+    cin >> largo;
+    cout << "Ingrese el ancho del campo en pies: ";
+    cin >> ancho;
+// Cálculo del área en acres
+    double acres = (largo * ancho) / 43560.0;
+    cout << "El área del campo es " << acres << " acres." << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 5: Depósitos de Botellas
+En muchas jurisdicciones, se agrega un pequeño depósito a los contenedores de bebidas para alentar a las personas a reciclarlos. En una jurisdicción particular, los contenedores de bebidas que contienen un litro o menos tienen un depósito de $0.10, y los contenedores de bebidas que contienen más de un litro tienen un depósito de $0.25.
+Escribe un programa que lea el número de contenedores de cada tamaño del usuario. Tu programa debe continuar calculando y mostrando el reembolso que se recibirá por devolver esos contenedores. Formatea la salida para que incluya un signo de dólar y siempre muestre exactamente dos decimales. Utilice 16 líneas
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+/*Programa para leer el número de contenedores y mostrar reembolso*/
+int main() {
+    int lessThanOne, moreThanOne;
+    cout << "Ingrese el número de contenedores de 1 litro o menos: ";
+    cin >> lessThanOne;
+    cout << "Ingrese el número de contenedores de más de 1 litro: ";
+    cin >> moreThanOne;
+    // Calcular el reembolso
+    double refund = (lessThanOne * 0.10) + (moreThanOne * 0.25);
+   //Mostrar el reembolso
+    cout << "El reembolso total es $ " << fixed << setprecision(2) << refund << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 6: Impuestos y Propina
+Python: Calcula el impuesto (5%) y propina (18%) de una comida.
+C++:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double cost;
+    cout << "Ingrese el costo de la comida: ";
+    cin >> cost;
+    
+    double tax = cost * 0.05; // Tasa de impuesto del 5%
+    double tip = cost * 0.18;
+    double total = cost + tax + tip;
+    
+    cout << "Impuesto: $ " << fixed << setprecision(2) << tax << endl;
+    cout << "Propina: $ " << tip << endl;
+    cout << "Total: $ " << total << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 7: Suma de los Primeros n Enteros Positivos
+Python: Calcula la suma usando la fórmula n(n+1)/2.
+C++:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese un entero positivo: ";
+    cin >> n;
+    int suma = (n * (n + 1)) / 2;
+    cout << "La suma de los primeros " << n << " enteros positivos es " << suma << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 8: Widgets y Gizmos
+Python: No tiene solución en el material fuente. Se sugiere: Leer la cantidad de widgets y gizmos y calcular el peso total (widgets: 75 g, gizmos: 112 g).
+C++:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int widgets, gizmos;
+    cout << "Ingrese el número de widgets: ";
+    cin >> widgets;
+    cout << "Ingrese el número de gizmos: ";
+    cin >> gizmos;
+    
+    int totalWeight = widgets * 75 + gizmos * 112;
+    cout << "El peso total del pedido es " << totalWeight << " gramos." << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 9: Interés Compuesto
+Python: No tiene solución en el material fuente. Se sugiere: Calcular el saldo después de 1, 2 y 3 años a un interés del 4% anual.
+C++:
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double deposito;
+    cout << "Ingrese la cantidad de dinero depositada: ";
+    cin >> deposito;
+    
+    double tasa = 0.04; // 4% anual
+    for (int anio = 1; anio <= 3; anio++) {
+        double saldo = deposito * pow(1 + tasa, anio);
+        cout << "Saldo despues de " << anio << " año(s): $" << fixed << setprecision(2) << saldo << endl;
+    }
+    return 0;
+}
+________________________________________
+Ejercicio 10: Aritmética
+Python: Realiza diversas operaciones aritméticas entre dos enteros.
+C++:
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Ingrese el primer entero: ";
+    cin >> a;
+    cout << "Ingrese el segundo entero: ";
+    cin >> b;
+    
+    cout << "La suma de a y b es " << a + b << endl;
+    cout << "La diferencia cuando b se resta de a es " << a - b << endl;
+    cout << "El producto de a y b es " << a * b << endl;
+    if(b != 0) {
+        cout << "El cociente cuando a se divide entre b es " << static_cast<double>(a) / b << endl;
+        cout << "El resto cuando a se divide entre b es " << a % b << endl;
+    } else {
+        cout << "División por cero no permitida." << endl;
+    }
+    if(a > 0) {
+        cout << "El resultado de log10(a) es " << log10(a) << endl;
+    } else {
+        cout << "log10 no definido para a <= 0." << endl;
+    }
+    cout << "El resultado de a^b es " << pow(a, b) << endl;
+    
+    return 0;
+}
+________________________________________
+
+
+
