@@ -14,7 +14,7 @@ int main() {
 ________________________________________
 Ejercicio 2: Hola
 
-/** Escribe un programa que le pida al usuario que ingrese su nombre. El programa debe responder con un mensaje que diga hola al usuario, usando su nombre. Utiliza 13 líneas de código**/
+Escribe un programa que le pida al usuario que ingrese su nombre. El programa debe responder con un mensaje que diga hola al usuario, usando su nombre. Utiliza 13 líneas de código
 #include <iostream>
 #include <string>
 using namespace std;
