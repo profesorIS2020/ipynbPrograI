@@ -1,0 +1,356 @@
+Ejercicio 6: Impuestos y Propina
+(Resuelto— Líneas) El programa que crees para este ejercicio comenzará leyendo el costo de una comida ordenada en un restaurante del usuario. Luego, tu programa calculará el impuesto y la propina para la comida. Usa tu tasa de impuesto local al calcular la cantidad de impuesto adeudado. Calcula la propina como el 18 por ciento del monto de la comida (sin el impuesto). La salida de tu programa debe incluir el monto del impuesto, el monto de la propina y el gran total para la comida, incluyendo tanto el impuesto como la propina. Formatea la salida para que todos los valores se muestren usando dos decimales.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double cost;
+    cout << "Ingrese el costo de la comida: ";
+    cin >> cost;
+    
+    double tax = cost * 0.05; // Tasa de impuesto del 5%
+    double tip = cost * 0.18;
+    double total = cost + tax + tip;
+    
+    cout << "Impuesto: $ " << fixed << setprecision(2) << tax << endl;
+    cout << "Propina: $ " << tip << endl;
+    cout << "Total: $ " << total << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 7: Suma de los Primeros n Enteros Positivos
+(Resuelto—12 Líneas) Escribe un programa que lea un entero positivo, n, del usuario y luego muestre la suma de todos los enteros de 1 a n. La suma de los primeros n enteros positivos se puede calcular usando la fórmula: sum = (n)(n + 1) / 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese un entero positivo: ";
+    cin >> n;
+    int suma = (n * (n + 1)) / 2;
+    cout << "La suma de los primeros " << n << " enteros positivos es " << suma << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 8: Widgets y Gizmos
+Un minorista en línea vende dos productos: widgets y gizmos. Cada widget pesa 75 gramos. Cada gizmo pesa 112 gramos. Escribe un programa que lea el número de widgets y el número de gizmos en un pedido del usuario. Luego, tu programa debe calcular y mostrar el peso total del pedido.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int widgets, gizmos;
+    cout << "Ingrese el número de widgets: ";
+    cin >> widgets;
+    cout << "Ingrese el número de gizmos: ";
+    cin >> gizmos;
+    
+    int totalWeight = widgets * 75 + gizmos * 112;
+    cout << "El peso total del pedido es " << totalWeight << " gramos." << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 9: Interés Compuesto
+(15 Líneas) Imagina que acabas de abrir una cuenta de ahorros que gana 4 por ciento de interés al año. El interés que ganas se paga al final del año, y el interés se agrega al saldo de la cuenta. Escribe un programa que comience leyendo la cantidad de dinero depositada en la cuenta del usuario. Luego, tu programa debe calcular y mostrar el saldo de la cuenta después del primer, segundo y tercer año.
+
+C++:
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double deposito;
+    cout << "Ingrese la cantidad de dinero depositada: ";
+    cin >> deposito;
+    
+    double tasa = 0.04; // 4% anual
+    for (int anio = 1; anio <= 3; anio++) {
+        double saldo = deposito * pow(1 + tasa, anio);
+        cout << "Saldo despues de " << anio << " año(s): $" << fixed << setprecision(2) << saldo << endl;
+    }
+    return 0;
+}
+________________________________________
+Ejercicio 10: Aritmética
+(Resuelto—14 Líneas) Crea un programa que lea dos enteros, a y b, del usuario. Tu programa debe calcular y mostrar:
+•	La suma de a y b
+•	La diferencia cuando b se resta de a
+•	El producto de a y b
+•	El cociente cuando a se divide entre b
+•	El resto cuando a se divide entre b
+•	El resultado de log10 a
+•	El resultado de a b.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Ingrese el primer entero: ";
+    cin >> a;
+    cout << "Ingrese el segundo entero: ";
+    cin >> b;
+    
+    cout << "La suma de a y b es " << a + b << endl;
+    cout << "La diferencia cuando b se resta de a es " << a - b << endl;
+    cout << "El producto de a y b es " << a * b << endl;
+    if(b != 0) {
+        cout << "El cociente cuando a se divide entre b es " << static_cast<double>(a) / b << endl;
+        cout << "El resto cuando a se divide entre b es " << a % b << endl;
+    } else {
+        cout << "División por cero no permitida." << endl;
+    }
+    if(a > 0) {
+        cout << "El resultado de log10(a) es " << log10(a) << endl;
+    } else {
+        cout << "log10 no definido para a <= 0." << endl;
+    }
+    cout << "El resultado de a^b es " << pow(a, b) << endl;
+    
+    return 0;
+}
+________________________________________
+Ejercicio 11: Eficiencia de Combustible
+En los Estados Unidos, la eficiencia de combustible para los vehículos normalmente se expresa en millas por galón (MPG). En Canadá, la eficiencia de combustible normalmente se expresa en litros por cada 100 kilómetros (L/100km). Usa tus habilidades de investigación para determinar cómo convertir de MPG a L/100km. Luego, crea un programa que lea un valor del usuario en unidades estadounidenses y muestre la eficiencia de combustible equivalente en unidades canadienses.
+C++:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double mpg;
+    cout << "Ingrese la eficiencia en millas por galón (MPG): ";
+    cin >> mpg;
+    if(mpg <= 0) {
+        cout << "El valor de MPG debe ser positivo." << endl;
+        return 1;
+    }
+    double l_per_100km = 235.214583 / mpg;
+    cout << "La eficiencia en litros por 100 km es " << fixed << setprecision(2) << l_per_100km << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 12: Distancia Entre Dos Puntos en la Tierra
+Python: No tiene solución en el material fuente. Se sugiere: Usar la fórmula de haversine para calcular la distancia entre dos coordenadas (latitud y longitud, en grados).
+C++:
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+const double PI = 3.141592653589793;
+const double EARTH_RADIUS_KM = 6371.0;
+
+double toRadians(double degrees) {
+    return degrees * PI / 180.0;
+}
+
+int main() {
+    double lat1, lon1, lat2, lon2;
+    cout << "Ingrese la latitud del primer punto (grados): ";
+    cin >> lat1;
+    cout << "Ingrese la longitud del primer punto (grados): ";
+    cin >> lon1;
+    cout << "Ingrese la latitud del segundo punto (grados): ";
+    cin >> lat2;
+    cout << "Ingrese la longitud del segundo punto (grados): ";
+    cin >> lon2;
+    
+    // Convertir a radianes
+    lat1 = toRadians(lat1);
+    lon1 = toRadians(lon1);
+    lat2 = toRadians(lat2);
+    lon2 = toRadians(lon2);
+    
+    double dlat = lat2 - lat1;
+    double dlon = lon2 - lon1;
+    
+    double a = sin(dlat/2) * sin(dlat/2) +
+               cos(lat1) * cos(lat2) *
+               sin(dlon/2) * sin(dlon/2);
+    double c = 2 * atan2(sqrt(a), sqrt(1-a));
+    double distance = EARTH_RADIUS_KM * c;
+    
+    cout << "La distancia entre los dos puntos es " << fixed << setprecision(2) 
+         << distance << " km." << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 13: Haciendo Cambio
+ Considera la cantidad de monedas que se necesitarían para hacer cambio para una cantidad específica de dinero. El dinero siempre debe dispensarse usando la menor cantidad de monedas posible. Asume que hay monedas de 25¢, 10¢, 5¢ y 1¢ disponibles. Escribe un programa que lea una cantidad de dinero del usuario. Luego, tu programa debe mostrar la cantidad mínima de monedas de cada tipo que se usarían para hacer cambio para esa cantidad. Imprime la cantidad de cada moneda en su propia línea, con la información ordenada de la moneda de mayor valor a la de menor valor.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int amount;
+    cout << "Ingrese la cantidad de dinero en centavos: ";
+    cin >> amount;
+    
+    int quarters = amount / 25;
+    amount %= 25;
+    int dimes = amount / 10;
+    amount %= 10;
+    int nickels = amount / 5;
+    amount %= 5;
+    int pennies = amount;
+    
+    cout << "Quarters: " << quarters << endl;
+    cout << "Dimes: " << dimes << endl;
+    cout << "Nickels: " << nickels << endl;
+    cout << "Pennies: " << pennies << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 14: Unidades de Altura
+Muchas personas piensan en su altura en pies y pulgadas, incluso en algunos países que utilizan principalmente el sistema métrico. Escribe un programa que lea un número de pies del usuario, seguido de un número de pulgadas. Una vez que se lean estos valores, tu programa debe calcular y mostrar el número equivalente de centímetros.
+C++:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int feet, inches;
+    cout << "Ingrese su altura en pies: ";
+    cin >> feet;
+    cout << "Ingrese su altura en pulgadas: ";
+    cin >> inches;
+    
+    double cm = (feet * 12 + inches) * 2.54;
+    cout << "Su altura en centímetros es " << cm << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 15: Unidades de Distancia
+En este ejercicio, crearás un programa que comience leyendo una medida en pies del usuario. Luego, tu programa debe mostrar la distancia equivalente en pulgadas, yardas y millas. Usa Internet para buscar los factores de conversión necesarios si no los tienes memorizados.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double feet;
+    cout << "Ingrese la distancia en pies: ";
+    cin >> feet;
+    
+    double inches = feet * 12;
+    double yards = feet / 3;
+    double miles = feet / 5280;
+    
+    cout << "Pulgadas: " << fixed << setprecision(2) << inches << endl;
+    cout << "Yardas: " << yards << endl;
+    cout << "Millas: " << miles << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 16: Área y Volumen
+(15 Líneas) Escribe un programa que comience leyendo un radio, r, del usuario. El programa continuará calculando y mostrando el área de un círculo con radio r y el volumen de una esfera con radio r. Usa la constante pi en el módulo math en tus cálculos.
+Pista: El área de un círculo se calcula usando la fórmula area = πr2. El volumen de una esfera se calcula usando la fórmula volume = (4/3)πr3.
+C++:
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+const double PI = 3.141592653589793;
+
+int main() {
+    double r;
+    cout << "Ingrese el radio: ";
+    cin >> r;
+    
+    double area = PI * r * r;
+    double volume = (4.0 / 3.0) * PI * r * r * r;
+    
+    cout << "Área del círculo: " << fixed << setprecision(2) << area << endl;
+    cout << "Volumen de la esfera: " << volume << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 17: Capacidad de Calor
+La cantidad de energía requerida para aumentar la temperatura de un gramo de un material en un grado Celsius es la capacidad de calor específica del material, C. La cantidad total de energía requerida para elevar m gramos de un material en ΔT grados Celsius se puede calcular usando la fórmula: Q = mCΔT. Escribe un programa que lea la masa de agua y el cambio de temperatura del usuario. Tu programa debe mostrar la cantidad total de energía que se necesita para calentar el agua.
+Pista: El calor específico del agua es 4.186 J/g°C. Debido a que el agua se está calentando, y no cambiando de estado, no necesitas preocuparte por su calor latente.
+Extiende tu programa para calcular el costo de calentar el agua. Eléctricamente. El programa asumirá que tu compañía eléctrica cobra $0.085 por kilovatio-hora. Usa tu programa para calcular el costo de hervir un litro de agua.
+Pista: Necesitarás buscar el factor para convertir entre Julios y kilovatios-hora para completar la última parte de este ejercicio.
+C++:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double mass, deltaT;
+    cout << "Ingrese la masa de agua en gramos: ";
+    cin >> mass;
+    cout << "Ingrese el cambio de temperatura en grados Celsius: ";
+    cin >> deltaT;
+    
+    double Q = mass * 4.186 * deltaT; // Energía en julios
+    cout << "La cantidad de energía necesaria es " << Q << " Julios." << endl;
+    
+    double kWh = Q / 3600000.0;
+    double cost = kWh * 0.085;
+    cout << "El costo de calentar el agua es $ " << fixed << setprecision(2) << cost << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 18: Volumen de un Cilindro
+(15 Líneas) El volumen de un cilindro se puede calcular multiplicando el área de su base circular por su altura. Escribe un programa que lea el radio del cilindro, junto con su altura, del usuario y calcule su volumen. Muestra el resultado redondeado a un decimal.
+C++:
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+const double PI = 3.141592653589793;
+
+int main() {
+    double r, height;
+    cout << "Ingrese el radio del cilindro: ";
+    cin >> r;
+    cout << "Ingrese la altura del cilindro: ";
+    cin >> height;
+    
+    double volume = PI * r * r * height;
+    cout << "El volumen del cilindro es " << fixed << setprecision(1) << volume << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 19: Caída Libre
+(Resuelto—16 Líneas) Crea un programa que determine qué tan rápido viaja un objeto cuando golpea el suelo. El usuario ingresará la altura desde la cual se deja caer el objeto en metros (m). Debido a que el objeto se deja caer, su velocidad inicial es de 0 m/s. Asume que la aceleración.
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double height;
+    cout << "Ingrese la altura en metros: ";
+    cin >> height;
+    
+    double finalVelocity = sqrt(2 * 9.8 * height);
+    cout << "La velocidad final del objeto es " << fixed << setprecision(2) << finalVelocity << " m/s." << endl;
+    return 0;
+}
+________________________________________
+Ejercicio 20: Ley de los Gases Ideales
+) La ley de los gases ideales es una aproximación matemática de la relación entre la presión, el volumen, la temperatura y la cantidad de gas. Se establece como: PV = nRT donde P es la presión en Pascales, V es el volumen en litros, n es la cantidad de sustancia en moles, R es la constante de los gases ideales, igual a 8.314 J/mol K, y T es la temperatura en grados Kelvin.
+Escribe un programa que calcule la cantidad de gas en moles cuando el usuario suministra la presión, el volumen y la temperatura.
+C++:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double P, V, T;
+    cout << "Ingrese la presión en Pascales: ";
+    cin >> P;
+    cout << "Ingrese el volumen en litros: ";
+    cin >> V;
+    cout << "Ingrese la temperatura en Kelvin: ";
+    cin >> T;
+    
+    const double R = 8.314; // J/(mol·K)
+    V *= 0.001; // Convertir litros a m^3
+    double n = (P * V) / (R * T);
+    
+    cout << "La cantidad de gas en moles es " << fixed << setprecision(4) << n << endl;
+    return 0;
+}
