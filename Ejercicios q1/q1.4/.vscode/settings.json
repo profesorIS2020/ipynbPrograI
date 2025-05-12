@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.embeddedhtml": "html",
-        "algorithm": "cpp",
-        "vector": "cpp"
-    }
-}
