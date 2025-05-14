@@ -1,0 +1,74 @@
+Excellent question.
+
+Even though **your source files are saved in UTF-8**, the **console (terminal) or environment where you run the program may not support or show UTF-8 characters correctly**, especially if:
+
+* You're using **Windows CMD or PowerShell**, which defaults to a legacy code page (like CP1252 or CP850).
+* You're compiling with `g++` but viewing the output in a terminal that doesn't support UTF-8 rendering.
+* The terminal font doesn't support accented characters.
+
+---
+
+### ✅ Solution Options
+
+#### 🔹 **1. Force UTF-8 in Windows Terminal (or PowerShell)**
+
+Before running your program, type:
+
+```bash
+chcp 65001
+```
+
+Then re-run your program:
+
+```bash
+.\app
+```
+
+This sets the **Windows console to UTF-8** code page (`65001`), so accents like `á`, `é`, `ñ`, etc., are rendered correctly.
+
+---
+
+#### 🔹 **2. Use Windows Terminal / Git Bash / WSL**
+
+* **Windows Terminal** is UTF-8–friendly by default.
+* **Git Bash** also renders UTF-8 well.
+* **WSL** (Windows Subsystem for Linux) runs Ubuntu and handles UTF-8 correctly too.
+
+---
+
+#### 🔹 **3. Print UTF-8 explicitly in C++ (if needed)**
+
+You usually don’t have to do this, but just in case:
+
+```cpp
+std::cout << u8"Estudiante Pérez agregado con éxito.\n";
+```
+
+The `u8` prefix ensures the string is encoded in UTF-8 explicitly.
+
+---
+
+### ✅ Verify Source Encoding
+
+Make sure all source files are saved with **UTF-8 (without BOM)**:
+
+* In **VS Code**: bottom-right corner → click on encoding → select `UTF-8`.
+
+---
+
+### 🧪 Test
+
+You can test quickly with:
+
+```cpp
+#include <iostream>
+int main() {
+    std::cout << u8"¡Bienvenido, José García!" << std::endl;
+}
+```
+
+If you see `Jos ` or similar, it means the terminal isn’t configured for UTF-8.
+
+---
+
+Would you like me to help detect the console you're using and give you exact steps?
